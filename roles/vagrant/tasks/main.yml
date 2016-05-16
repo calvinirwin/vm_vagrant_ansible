@@ -1,0 +1,11 @@
+- name: Installing virtualbox
+  shell: >
+    yes | sudo apt-get install virtualbox -V
+  ignore_errors: no
+  tags: [virtualbox, install, setup]
+
+- name: Installing vagrant
+  shell: >
+    yes | sudo apt-get install vagrant -V
+  ignore_errors: no
+  tags: [vagrant, install, setup]

@@ -1,0 +1,20 @@
+remote_user: vagrant
+ansible_ssh_private_key_file: /vagrant/.vagrant/machines/{{ hostname }}/virtualbox/private_key
+
+docker_registry: 10.20.4.101
+docker_network_name: vader-net
+dns_zone: vader.com
+forward_proxy_name: http-forward-proxy
+
+consul_master_host: "{{ hostvars[groups['infra'][0]]['ip'] }}"
+consul_name: consul
+consul_static_port: true
+consul_network_command:
+
+consul_config_project: vader-config
+consul_config_env: develop
+
+docker_opts: >
+  -H unix:///var/run/docker.sock
+  -H tcp://0.0.0.0:2375
+  --insecure-registry {{ docker_registry }}

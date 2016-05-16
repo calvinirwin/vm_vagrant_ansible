@@ -1,0 +1,8 @@
+# Install Docker on each host
+- hosts: all
+  serial: 1
+  remote_user: "{{ remote_user }}"
+  sudo: yes
+  roles:
+    - docker
+    - vagrant
