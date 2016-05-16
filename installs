@@ -1,0 +1,6 @@
+    
+# - name: Installing vagrant-dkms
+#   shell: >
+#     sudo apt-get install virtualbox-dkms -V
+#   ignore_errors: no
+#   tags: [vagrant, install, setup]
